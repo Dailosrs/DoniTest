@@ -1,5 +1,7 @@
 # DoniTest
 
+Les dejo una lista de los paquetes de dependencia de cada solución por si fueran necesarios.
+
 <b>DoniAPItest</b>
 
 DEPENDENCIAS
