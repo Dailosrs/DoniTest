@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Tour>
+@{ Layout = "_Layout"; ViewBag.Title = "Tours";}
+
+<h2>¡Todos los tours que ofrecemos!</h2>
+<a asp-action="AddTour" class="btn btn-sm btn-primary">Añadir tour</a>
+<table class="table table-sm" style="margin-top:15px">
+
+    <tbody>
+        @foreach (var tour in Model)
+        {
+            <tr>
+                <td><img src="@tour.UrlImagen" class="rounded-circle" width="600" height="200"></td>
+                <td style="padding-top:80px"><h1>@tour.Nombre</h1></td>
+                <td style="padding-top:80px">
+                    <a asp-action="ShowTourDetails" asp-route-id="@tour.Id" class="btn btn-primary">Detalles</a>
+                </td>
+                <td style="padding-top:80px">
+                    <a asp-action="UpdateTour" asp-route-id="@tour.Id" class="btn btn-success">Editar</a>
+                </td>
+                <td style="padding-top:80px">
+                    <form asp-action="DeleteTour" method="post">
+                        <input type="hidden" value="@tour.Id" name="TourId" />
+                        <button type="submit" class="btn btn-danger">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

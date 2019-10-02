@@ -1,0 +1,28 @@
+﻿@model Tour
+@{ Layout = "_Layout"; ViewBag.Title = "Actualizar Tour";}
+
+<h2 class="text-center">Actualiza el Tour </h2>
+<form method="post" style="width:50%; margin-left:25%">
+    <div class="form-group">
+        <input class="form-control" asp-for="Id" readonly hidden />
+    </div>
+    <div class="form-group">
+        <label asp-for="Nombre">Nombre:</label>
+        <input class="form-control" asp-for="Nombre" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Descripcion">Descripcion:</label>
+        <textarea class="form-control" asp-for="Descripcion">@Model.Descripcion</textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="Observaciones">Observaciones:</label>
+        <textarea class="form-control" asp-for="Observaciones">@Model.Observaciones</textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="UrlImagen">UrlImagen:</label>
+        <input class="form-control" asp-for="UrlImagen" />
+    </div>
+    <div class="text-center panel-body">
+        <button type="submit" class="btn btn-sm btn-primary">Actualizar</button><a asp-action="Index" class="btn btn-sm btn-secondary" style="margin-left:15px">Regresar</a>
+    </div>
+</form>
